@@ -1,4 +1,11 @@
 import pandas
 from pkg_resources import resource_filename as _rf
 
-ames = pandas.read_csv(_rf("feazdata", "data/ames.csv"))
+__all__ = [
+    "ames",
+    "flights"
+]
+
+def __getattr__(name):
+  if name in __all__:
+    return pandas.read_csv(_rf("feazdata", f"data/{name}.csv"))
