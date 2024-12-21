@@ -3,7 +3,8 @@ from pkg_resources import resource_filename as _rf
 
 __all__ = [
     "ames",
-    "flights"
+    "flights",
+    "shelter_cats"
 ]
 
 def __getattr__(name):
